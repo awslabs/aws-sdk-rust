@@ -18,5 +18,8 @@ pub fn ser_list_transaction_events_input_input(
     if let Some(var_4) = &input.transaction_hash {
         object.key("transactionHash").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.transaction_id {
+        object.key("transactionId").string(var_5.as_str());
+    }
     Ok(())
 }

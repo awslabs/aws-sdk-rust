@@ -8,6 +8,8 @@ pub struct KxDataviewSegmentConfiguration {
     pub db_paths: ::std::vec::Vec<::std::string::String>,
     /// <p>The name of the volume where you want to add data.</p>
     pub volume_name: ::std::string::String,
+    /// <p>Enables on-demand caching on the selected database path when a particular file or a column of the database is accessed. When on demand caching is <b>True</b>, dataviews perform minimal loading of files on the filesystem as needed. When it is set to <b>False</b>, everything is cached. The default value is <b>False</b>.</p>
+    pub on_demand: bool,
 }
 impl KxDataviewSegmentConfiguration {
     /// <p>The database path of the data that you want to place on each selected volume for the segment. Each segment must have a unique database path for each volume.</p>
@@ -19,6 +21,10 @@ impl KxDataviewSegmentConfiguration {
     pub fn volume_name(&self) -> &str {
         use std::ops::Deref;
         self.volume_name.deref()
+    }
+    /// <p>Enables on-demand caching on the selected database path when a particular file or a column of the database is accessed. When on demand caching is <b>True</b>, dataviews perform minimal loading of files on the filesystem as needed. When it is set to <b>False</b>, everything is cached. The default value is <b>False</b>.</p>
+    pub fn on_demand(&self) -> bool {
+        self.on_demand
     }
 }
 impl KxDataviewSegmentConfiguration {
@@ -34,6 +40,7 @@ impl KxDataviewSegmentConfiguration {
 pub struct KxDataviewSegmentConfigurationBuilder {
     pub(crate) db_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) volume_name: ::std::option::Option<::std::string::String>,
+    pub(crate) on_demand: ::std::option::Option<bool>,
 }
 impl KxDataviewSegmentConfigurationBuilder {
     /// Appends an item to `db_paths`.
@@ -71,6 +78,20 @@ impl KxDataviewSegmentConfigurationBuilder {
     pub fn get_volume_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_name
     }
+    /// <p>Enables on-demand caching on the selected database path when a particular file or a column of the database is accessed. When on demand caching is <b>True</b>, dataviews perform minimal loading of files on the filesystem as needed. When it is set to <b>False</b>, everything is cached. The default value is <b>False</b>.</p>
+    pub fn on_demand(mut self, input: bool) -> Self {
+        self.on_demand = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Enables on-demand caching on the selected database path when a particular file or a column of the database is accessed. When on demand caching is <b>True</b>, dataviews perform minimal loading of files on the filesystem as needed. When it is set to <b>False</b>, everything is cached. The default value is <b>False</b>.</p>
+    pub fn set_on_demand(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.on_demand = input;
+        self
+    }
+    /// <p>Enables on-demand caching on the selected database path when a particular file or a column of the database is accessed. When on demand caching is <b>True</b>, dataviews perform minimal loading of files on the filesystem as needed. When it is set to <b>False</b>, everything is cached. The default value is <b>False</b>.</p>
+    pub fn get_on_demand(&self) -> &::std::option::Option<bool> {
+        &self.on_demand
+    }
     /// Consumes the builder and constructs a [`KxDataviewSegmentConfiguration`](crate::types::KxDataviewSegmentConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`db_paths`](crate::types::builders::KxDataviewSegmentConfigurationBuilder::db_paths)
@@ -89,6 +110,7 @@ impl KxDataviewSegmentConfigurationBuilder {
                     "volume_name was not specified but it is required when building KxDataviewSegmentConfiguration",
                 )
             })?,
+            on_demand: self.on_demand.unwrap_or_default(),
         })
     }
 }

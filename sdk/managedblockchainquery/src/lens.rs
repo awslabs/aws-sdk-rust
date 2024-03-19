@@ -9,6 +9,16 @@ pub(crate) fn reflens_list_asset_contracts_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_filtered_transaction_events_output_output_next_token(
+    input: &crate::operation::list_filtered_transaction_events::ListFilteredTransactionEventsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_token_balances_output_output_next_token(
     input: &crate::operation::list_token_balances::ListTokenBalancesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -43,6 +53,13 @@ pub(crate) fn lens_list_asset_contracts_output_output_contracts(
     input: crate::operation::list_asset_contracts::ListAssetContractsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AssetContract>> {
     let input = input.contracts;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_filtered_transaction_events_output_output_events(
+    input: crate::operation::list_filtered_transaction_events::ListFilteredTransactionEventsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TransactionEvent>> {
+    let input = input.events;
     ::std::option::Option::Some(input)
 }
 

@@ -84,6 +84,40 @@ where
                                     .transpose()?,
                             );
                         }
+                        "voutSpent" => {
+                            builder = builder.set_vout_spent(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "spentVoutTransactionId" => {
+                            builder = builder.set_spent_vout_transaction_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "spentVoutTransactionHash" => {
+                            builder = builder.set_spent_vout_transaction_hash(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "spentVoutIndex" => {
+                            builder = builder.set_spent_vout_index(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "blockchainInstant" => {
+                            builder = builder.set_blockchain_instant(crate::protocol_serde::shape_blockchain_instant::de_blockchain_instant(tokens)?);
+                        }
+                        "confirmationStatus" => {
+                            builder = builder.set_confirmation_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ConfirmationStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

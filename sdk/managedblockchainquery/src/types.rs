@@ -35,6 +35,16 @@ pub use crate::types::_token_filter::TokenFilter;
 
 pub use crate::types::_owner_filter::OwnerFilter;
 
+pub use crate::types::_list_filtered_transaction_events_sort::ListFilteredTransactionEventsSort;
+
+pub use crate::types::_list_filtered_transaction_events_sort_by::ListFilteredTransactionEventsSortBy;
+
+pub use crate::types::_vout_filter::VoutFilter;
+
+pub use crate::types::_time_filter::TimeFilter;
+
+pub use crate::types::_address_identifier_filter::AddressIdentifierFilter;
+
 pub use crate::types::_asset_contract::AssetContract;
 
 pub use crate::types::_query_token_standard::QueryTokenStandard;
@@ -56,6 +66,8 @@ pub use crate::types::_error_type::ErrorType;
 pub use crate::types::_batch_get_token_balance_output_item::BatchGetTokenBalanceOutputItem;
 
 pub use crate::types::_batch_get_token_balance_input_item::BatchGetTokenBalanceInputItem;
+
+mod _address_identifier_filter;
 
 mod _asset_contract;
 
@@ -81,6 +93,10 @@ mod _error_type;
 
 mod _execution_status;
 
+mod _list_filtered_transaction_events_sort;
+
+mod _list_filtered_transaction_events_sort_by;
+
 mod _list_transactions_sort;
 
 mod _list_transactions_sort_by;
@@ -99,6 +115,8 @@ mod _resource_type;
 
 mod _sort_order;
 
+mod _time_filter;
+
 mod _token_balance;
 
 mod _token_filter;
@@ -114,6 +132,8 @@ mod _transaction_output_item;
 mod _validation_exception_field;
 
 mod _validation_exception_reason;
+
+mod _vout_filter;
 
 /// Builders
 pub mod builders;

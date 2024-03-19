@@ -10,6 +10,21 @@ pub struct CreateKxScalingGroupInput {
     /// <p>A unique identifier for the kdb scaling group.</p>
     pub scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed.</p>
+    /// <p>You can add one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>kx.sg.4xlarge</code> – The host type with a configuration of 108 GiB memory and 16 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg.8xlarge</code> – The host type with a configuration of 216 GiB memory and 32 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg.16xlarge</code> – The host type with a configuration of 432 GiB memory and 64 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg.32xlarge</code> – The host type with a configuration of 864 GiB memory and 128 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg1.16xlarge</code> – The host type with a configuration of 1949 GiB memory and 64 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg1.24xlarge</code> – The host type with a configuration of 2948 GiB memory and 96 vCPUs.</p></li>
+    /// </ul>
     pub host_type: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the availability zones.</p>
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
@@ -30,6 +45,21 @@ impl CreateKxScalingGroupInput {
         self.scaling_group_name.as_deref()
     }
     /// <p>The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed.</p>
+    /// <p>You can add one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>kx.sg.4xlarge</code> – The host type with a configuration of 108 GiB memory and 16 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg.8xlarge</code> – The host type with a configuration of 216 GiB memory and 32 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg.16xlarge</code> – The host type with a configuration of 432 GiB memory and 64 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg.32xlarge</code> – The host type with a configuration of 864 GiB memory and 128 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg1.16xlarge</code> – The host type with a configuration of 1949 GiB memory and 64 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg1.24xlarge</code> – The host type with a configuration of 2948 GiB memory and 96 vCPUs.</p></li>
+    /// </ul>
     pub fn host_type(&self) -> ::std::option::Option<&str> {
         self.host_type.as_deref()
     }
@@ -107,17 +137,62 @@ impl CreateKxScalingGroupInputBuilder {
         &self.scaling_group_name
     }
     /// <p>The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed.</p>
+    /// <p>You can add one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>kx.sg.4xlarge</code> – The host type with a configuration of 108 GiB memory and 16 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg.8xlarge</code> – The host type with a configuration of 216 GiB memory and 32 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg.16xlarge</code> – The host type with a configuration of 432 GiB memory and 64 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg.32xlarge</code> – The host type with a configuration of 864 GiB memory and 128 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg1.16xlarge</code> – The host type with a configuration of 1949 GiB memory and 64 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg1.24xlarge</code> – The host type with a configuration of 2948 GiB memory and 96 vCPUs.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn host_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed.</p>
+    /// <p>You can add one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>kx.sg.4xlarge</code> – The host type with a configuration of 108 GiB memory and 16 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg.8xlarge</code> – The host type with a configuration of 216 GiB memory and 32 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg.16xlarge</code> – The host type with a configuration of 432 GiB memory and 64 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg.32xlarge</code> – The host type with a configuration of 864 GiB memory and 128 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg1.16xlarge</code> – The host type with a configuration of 1949 GiB memory and 64 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg1.24xlarge</code> – The host type with a configuration of 2948 GiB memory and 96 vCPUs.</p></li>
+    /// </ul>
     pub fn set_host_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_type = input;
         self
     }
     /// <p>The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed.</p>
+    /// <p>You can add one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>kx.sg.4xlarge</code> – The host type with a configuration of 108 GiB memory and 16 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg.8xlarge</code> – The host type with a configuration of 216 GiB memory and 32 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg.16xlarge</code> – The host type with a configuration of 432 GiB memory and 64 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg.32xlarge</code> – The host type with a configuration of 864 GiB memory and 128 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg1.16xlarge</code> – The host type with a configuration of 1949 GiB memory and 64 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg1.24xlarge</code> – The host type with a configuration of 2948 GiB memory and 96 vCPUs.</p></li>
+    /// </ul>
     pub fn get_host_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.host_type
     }

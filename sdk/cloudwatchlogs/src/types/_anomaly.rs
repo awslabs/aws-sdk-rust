@@ -30,7 +30,7 @@ pub struct Anomaly {
     /// <p>A map showing times when the anomaly detector ran, and the number of occurrences of this anomaly that were detected at each of those runs. The times are specified in epoch time, which is the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
     pub histogram: ::std::collections::HashMap<::std::string::String, i64>,
     /// <p>An array of sample log event messages that are considered to be part of this anomaly.</p>
-    pub log_samples: ::std::vec::Vec<::std::string::String>,
+    pub log_samples: ::std::vec::Vec<crate::types::LogEvent>,
     /// <p>An array of structures where each structure contains information about one token that makes up the pattern.</p>
     pub pattern_tokens: ::std::vec::Vec<crate::types::PatternToken>,
     /// <p>An array of ARNS of the log groups that contained log events considered to be part of this anomaly.</p>
@@ -99,7 +99,7 @@ impl Anomaly {
         &self.histogram
     }
     /// <p>An array of sample log event messages that are considered to be part of this anomaly.</p>
-    pub fn log_samples(&self) -> &[::std::string::String] {
+    pub fn log_samples(&self) -> &[crate::types::LogEvent] {
         use std::ops::Deref;
         self.log_samples.deref()
     }
@@ -153,7 +153,7 @@ pub struct AnomalyBuilder {
     pub(crate) active: ::std::option::Option<bool>,
     pub(crate) state: ::std::option::Option<crate::types::State>,
     pub(crate) histogram: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
-    pub(crate) log_samples: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) log_samples: ::std::option::Option<::std::vec::Vec<crate::types::LogEvent>>,
     pub(crate) pattern_tokens: ::std::option::Option<::std::vec::Vec<crate::types::PatternToken>>,
     pub(crate) log_group_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) suppressed: ::std::option::Option<bool>,
@@ -350,19 +350,19 @@ impl AnomalyBuilder {
     /// To override the contents of this collection use [`set_log_samples`](Self::set_log_samples).
     ///
     /// <p>An array of sample log event messages that are considered to be part of this anomaly.</p>
-    pub fn log_samples(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+    pub fn log_samples(mut self, input: crate::types::LogEvent) -> Self {
         let mut v = self.log_samples.unwrap_or_default();
-        v.push(input.into());
+        v.push(input);
         self.log_samples = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of sample log event messages that are considered to be part of this anomaly.</p>
-    pub fn set_log_samples(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_log_samples(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogEvent>>) -> Self {
         self.log_samples = input;
         self
     }
     /// <p>An array of sample log event messages that are considered to be part of this anomaly.</p>
-    pub fn get_log_samples(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_log_samples(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogEvent>> {
         &self.log_samples
     }
     /// Appends an item to `pattern_tokens`.

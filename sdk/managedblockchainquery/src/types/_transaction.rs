@@ -14,7 +14,7 @@ pub struct Transaction {
     pub network: crate::types::QueryNetwork,
     /// <p>The block hash is a unique identifier for a block. It is a fixed-size string that is calculated by using the information in the block. The block hash is used to verify the integrity of the data in the block.</p>
     pub block_hash: ::std::option::Option<::std::string::String>,
-    /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     pub transaction_hash: ::std::string::String,
     /// <p>The block number in which the transaction is recorded.</p>
     pub block_number: ::std::option::Option<::std::string::String>,
@@ -44,7 +44,7 @@ pub struct Transaction {
     pub signature_s: ::std::option::Option<::std::string::String>,
     /// <p>The transaction fee.</p>
     pub transaction_fee: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p>
     pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the transaction has reached Finality.</p>
     pub confirmation_status: ::std::option::Option<crate::types::ConfirmationStatus>,
@@ -60,7 +60,7 @@ impl Transaction {
     pub fn block_hash(&self) -> ::std::option::Option<&str> {
         self.block_hash.as_deref()
     }
-    /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     pub fn transaction_hash(&self) -> &str {
         use std::ops::Deref;
         self.transaction_hash.deref()
@@ -122,7 +122,7 @@ impl Transaction {
     pub fn transaction_fee(&self) -> ::std::option::Option<&str> {
         self.transaction_fee.as_deref()
     }
-    /// <p>The unique identifier of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p>
     pub fn transaction_id(&self) -> ::std::option::Option<&str> {
         self.transaction_id.as_deref()
     }
@@ -197,18 +197,18 @@ impl TransactionBuilder {
     pub fn get_block_hash(&self) -> &::std::option::Option<::std::string::String> {
         &self.block_hash
     }
-    /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     /// This field is required.
     pub fn transaction_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_hash = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     pub fn set_transaction_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transaction_hash = input;
         self
     }
-    /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     pub fn get_transaction_hash(&self) -> &::std::option::Option<::std::string::String> {
         &self.transaction_hash
     }
@@ -412,17 +412,17 @@ impl TransactionBuilder {
     pub fn get_transaction_fee(&self) -> &::std::option::Option<::std::string::String> {
         &self.transaction_fee
     }
-    /// <p>The unique identifier of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p>
     pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p>
     pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transaction_id = input;
         self
     }
-    /// <p>The unique identifier of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p>
     pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transaction_id
     }

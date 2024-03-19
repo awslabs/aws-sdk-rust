@@ -7,13 +7,7 @@ pub struct GetKxDataviewOutput {
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the dataview.</p>
     pub dataview_name: ::std::option::Option<::std::string::String>,
-    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
-    /// <li>
-    /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
-    /// </ul>
+    /// <p>The number of availability zones you want to assign per volume. Currently, FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in a single AZ.</p>
     pub az_mode: ::std::option::Option<crate::types::KxAzMode>,
     /// <p>The identifier of the availability zones.</p>
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
@@ -27,6 +21,8 @@ pub struct GetKxDataviewOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The option to specify whether you want to apply all the future additions and corrections automatically to the dataview when new changesets are ingested. The default value is false.</p>
     pub auto_update: bool,
+    /// <p>Returns True if the dataview is created as writeable and False otherwise.</p>
+    pub read_write: bool,
     /// <p>A unique identifier for the kdb environment, from where you want to retrieve the dataview details.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp at which the dataview was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
@@ -56,13 +52,7 @@ impl GetKxDataviewOutput {
     pub fn dataview_name(&self) -> ::std::option::Option<&str> {
         self.dataview_name.as_deref()
     }
-    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
-    /// <li>
-    /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
-    /// </ul>
+    /// <p>The number of availability zones you want to assign per volume. Currently, FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in a single AZ.</p>
     pub fn az_mode(&self) -> ::std::option::Option<&crate::types::KxAzMode> {
         self.az_mode.as_ref()
     }
@@ -93,6 +83,10 @@ impl GetKxDataviewOutput {
     /// <p>The option to specify whether you want to apply all the future additions and corrections automatically to the dataview when new changesets are ingested. The default value is false.</p>
     pub fn auto_update(&self) -> bool {
         self.auto_update
+    }
+    /// <p>Returns True if the dataview is created as writeable and False otherwise.</p>
+    pub fn read_write(&self) -> bool {
+        self.read_write
     }
     /// <p>A unique identifier for the kdb environment, from where you want to retrieve the dataview details.</p>
     pub fn environment_id(&self) -> ::std::option::Option<&str> {
@@ -148,6 +142,7 @@ pub struct GetKxDataviewOutputBuilder {
     pub(crate) active_versions: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewActiveVersion>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) auto_update: ::std::option::Option<bool>,
+    pub(crate) read_write: ::std::option::Option<bool>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -184,35 +179,17 @@ impl GetKxDataviewOutputBuilder {
     pub fn get_dataview_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataview_name
     }
-    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
-    /// <li>
-    /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
-    /// </ul>
+    /// <p>The number of availability zones you want to assign per volume. Currently, FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in a single AZ.</p>
     pub fn az_mode(mut self, input: crate::types::KxAzMode) -> Self {
         self.az_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
-    /// <li>
-    /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
-    /// </ul>
+    /// <p>The number of availability zones you want to assign per volume. Currently, FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in a single AZ.</p>
     pub fn set_az_mode(mut self, input: ::std::option::Option<crate::types::KxAzMode>) -> Self {
         self.az_mode = input;
         self
     }
-    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
-    /// <li>
-    /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
-    /// </ul>
+    /// <p>The number of availability zones you want to assign per volume. Currently, FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in a single AZ.</p>
     pub fn get_az_mode(&self) -> &::std::option::Option<crate::types::KxAzMode> {
         &self.az_mode
     }
@@ -311,6 +288,20 @@ impl GetKxDataviewOutputBuilder {
     /// <p>The option to specify whether you want to apply all the future additions and corrections automatically to the dataview when new changesets are ingested. The default value is false.</p>
     pub fn get_auto_update(&self) -> &::std::option::Option<bool> {
         &self.auto_update
+    }
+    /// <p>Returns True if the dataview is created as writeable and False otherwise.</p>
+    pub fn read_write(mut self, input: bool) -> Self {
+        self.read_write = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Returns True if the dataview is created as writeable and False otherwise.</p>
+    pub fn set_read_write(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.read_write = input;
+        self
+    }
+    /// <p>Returns True if the dataview is created as writeable and False otherwise.</p>
+    pub fn get_read_write(&self) -> &::std::option::Option<bool> {
+        &self.read_write
     }
     /// <p>A unique identifier for the kdb environment, from where you want to retrieve the dataview details.</p>
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -427,6 +418,7 @@ impl GetKxDataviewOutputBuilder {
             active_versions: self.active_versions,
             description: self.description,
             auto_update: self.auto_update.unwrap_or_default(),
+            read_write: self.read_write.unwrap_or_default(),
             environment_id: self.environment_id,
             created_timestamp: self.created_timestamp,
             last_modified_timestamp: self.last_modified_timestamp,

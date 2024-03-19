@@ -173,6 +173,8 @@ mod get_transaction;
 
 mod list_asset_contracts;
 
+mod list_filtered_transaction_events;
+
 mod list_token_balances;
 
 mod list_transaction_events;

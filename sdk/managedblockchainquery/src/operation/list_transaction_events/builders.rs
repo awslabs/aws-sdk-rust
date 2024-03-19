@@ -22,7 +22,7 @@ impl ListTransactionEventsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListTransactionEvents`.
 ///
-/// <p>An array of <code>TransactionEvent</code> objects. Each object contains details about the transaction event.</p><note>
+/// <p>Lists all the transaction events for a transaction</p><note>
 /// <p>This action will return transaction details for all transactions that are <i>confirmed</i> on the blockchain, even if they have not reached <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">finality</a>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -116,19 +116,39 @@ impl ListTransactionEventsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_transaction_events::paginator::ListTransactionEventsPaginator {
         crate::operation::list_transaction_events::paginator::ListTransactionEventsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     pub fn transaction_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transaction_hash(input.into());
         self
     }
-    /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     pub fn set_transaction_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transaction_hash(input);
         self
     }
-    /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     pub fn get_transaction_hash(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_transaction_hash()
+    }
+    /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p><note>
+    /// <p><code>transactionId</code> is only supported on the Bitcoin networks.</p>
+    /// </note>
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.transaction_id(input.into());
+        self
+    }
+    /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p><note>
+    /// <p><code>transactionId</code> is only supported on the Bitcoin networks.</p>
+    /// </note>
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_transaction_id(input);
+        self
+    }
+    /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p><note>
+    /// <p><code>transactionId</code> is only supported on the Bitcoin networks.</p>
+    /// </note>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transaction_id()
     }
     /// <p>The blockchain network where the transaction events occurred.</p>
     pub fn network(mut self, input: crate::types::QueryNetwork) -> Self {
@@ -159,7 +179,7 @@ impl ListTransactionEventsFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>The maximum number of transaction events to list.</p>
-    /// <p>Default:<code>100</code></p><note>
+    /// <p>Default: <code>100</code></p><note>
     /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
     /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
     /// </note>
@@ -168,7 +188,7 @@ impl ListTransactionEventsFluentBuilder {
         self
     }
     /// <p>The maximum number of transaction events to list.</p>
-    /// <p>Default:<code>100</code></p><note>
+    /// <p>Default: <code>100</code></p><note>
     /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
     /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
     /// </note>
@@ -177,7 +197,7 @@ impl ListTransactionEventsFluentBuilder {
         self
     }
     /// <p>The maximum number of transaction events to list.</p>
-    /// <p>Default:<code>100</code></p><note>
+    /// <p>Default: <code>100</code></p><note>
     /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
     /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
     /// </note>

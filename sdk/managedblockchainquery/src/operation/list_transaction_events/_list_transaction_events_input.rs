@@ -3,23 +3,33 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTransactionEventsInput {
-    /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     pub transaction_hash: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p><note>
+    /// <p><code>transactionId</code> is only supported on the Bitcoin networks.</p>
+    /// </note>
+    pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>The blockchain network where the transaction events occurred.</p>
     pub network: ::std::option::Option<crate::types::QueryNetwork>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of transaction events to list.</p>
-    /// <p>Default:<code>100</code></p><note>
+    /// <p>Default: <code>100</code></p><note>
     /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
     /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
     /// </note>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListTransactionEventsInput {
-    /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     pub fn transaction_hash(&self) -> ::std::option::Option<&str> {
         self.transaction_hash.as_deref()
+    }
+    /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p><note>
+    /// <p><code>transactionId</code> is only supported on the Bitcoin networks.</p>
+    /// </note>
+    pub fn transaction_id(&self) -> ::std::option::Option<&str> {
+        self.transaction_id.as_deref()
     }
     /// <p>The blockchain network where the transaction events occurred.</p>
     pub fn network(&self) -> ::std::option::Option<&crate::types::QueryNetwork> {
@@ -30,7 +40,7 @@ impl ListTransactionEventsInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of transaction events to list.</p>
-    /// <p>Default:<code>100</code></p><note>
+    /// <p>Default: <code>100</code></p><note>
     /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
     /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
     /// </note>
@@ -50,25 +60,45 @@ impl ListTransactionEventsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTransactionEventsInputBuilder {
     pub(crate) transaction_hash: ::std::option::Option<::std::string::String>,
+    pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
     pub(crate) network: ::std::option::Option<crate::types::QueryNetwork>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListTransactionEventsInputBuilder {
-    /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
-    /// This field is required.
+    /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     pub fn transaction_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_hash = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     pub fn set_transaction_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transaction_hash = input;
         self
     }
-    /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     pub fn get_transaction_hash(&self) -> &::std::option::Option<::std::string::String> {
         &self.transaction_hash
+    }
+    /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p><note>
+    /// <p><code>transactionId</code> is only supported on the Bitcoin networks.</p>
+    /// </note>
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.transaction_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p><note>
+    /// <p><code>transactionId</code> is only supported on the Bitcoin networks.</p>
+    /// </note>
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.transaction_id = input;
+        self
+    }
+    /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p><note>
+    /// <p><code>transactionId</code> is only supported on the Bitcoin networks.</p>
+    /// </note>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
     }
     /// <p>The blockchain network where the transaction events occurred.</p>
     /// This field is required.
@@ -100,7 +130,7 @@ impl ListTransactionEventsInputBuilder {
         &self.next_token
     }
     /// <p>The maximum number of transaction events to list.</p>
-    /// <p>Default:<code>100</code></p><note>
+    /// <p>Default: <code>100</code></p><note>
     /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
     /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
     /// </note>
@@ -109,7 +139,7 @@ impl ListTransactionEventsInputBuilder {
         self
     }
     /// <p>The maximum number of transaction events to list.</p>
-    /// <p>Default:<code>100</code></p><note>
+    /// <p>Default: <code>100</code></p><note>
     /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
     /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
     /// </note>
@@ -118,7 +148,7 @@ impl ListTransactionEventsInputBuilder {
         self
     }
     /// <p>The maximum number of transaction events to list.</p>
-    /// <p>Default:<code>100</code></p><note>
+    /// <p>Default: <code>100</code></p><note>
     /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
     /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
     /// </note>
@@ -132,6 +162,7 @@ impl ListTransactionEventsInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::list_transaction_events::ListTransactionEventsInput {
             transaction_hash: self.transaction_hash,
+            transaction_id: self.transaction_id,
             network: self.network,
             next_token: self.next_token,
             max_results: self.max_results,

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransactionOutputItem {
-    /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     pub transaction_hash: ::std::string::String,
     /// <p>The blockchain network where the transaction occurred.</p>
     pub network: crate::types::QueryNetwork,
@@ -14,7 +14,7 @@ pub struct TransactionOutputItem {
     pub confirmation_status: ::std::option::Option<crate::types::ConfirmationStatus>,
 }
 impl TransactionOutputItem {
-    /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     pub fn transaction_hash(&self) -> &str {
         use std::ops::Deref;
         self.transaction_hash.deref()
@@ -49,18 +49,18 @@ pub struct TransactionOutputItemBuilder {
     pub(crate) confirmation_status: ::std::option::Option<crate::types::ConfirmationStatus>,
 }
 impl TransactionOutputItemBuilder {
-    /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     /// This field is required.
     pub fn transaction_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_hash = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     pub fn set_transaction_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transaction_hash = input;
         self
     }
-    /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     pub fn get_transaction_hash(&self) -> &::std::option::Option<::std::string::String> {
         &self.transaction_hash
     }

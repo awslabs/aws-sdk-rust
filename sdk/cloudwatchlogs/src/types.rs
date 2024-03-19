@@ -53,6 +53,8 @@ pub use crate::types::_anomaly::Anomaly;
 
 pub use crate::types::_pattern_token::PatternToken;
 
+pub use crate::types::_log_event::LogEvent;
+
 pub use crate::types::_state::State;
 
 pub use crate::types::_suppression_state::SuppressionState;
@@ -140,6 +142,8 @@ mod _filtered_log_event;
 mod _inherited_property;
 
 mod _input_log_event;
+
+mod _log_event;
 
 mod _log_group;
 

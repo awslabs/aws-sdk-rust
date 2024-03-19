@@ -747,6 +747,8 @@ mod describe_local_gateways;
 
 mod describe_locked_snapshots;
 
+mod describe_mac_hosts;
+
 mod describe_managed_prefix_lists;
 
 mod describe_moving_addresses;

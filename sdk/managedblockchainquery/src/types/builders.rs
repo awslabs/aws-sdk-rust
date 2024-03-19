@@ -21,6 +21,14 @@ pub use crate::types::_token_filter::TokenFilterBuilder;
 
 pub use crate::types::_owner_filter::OwnerFilterBuilder;
 
+pub use crate::types::_list_filtered_transaction_events_sort::ListFilteredTransactionEventsSortBuilder;
+
+pub use crate::types::_vout_filter::VoutFilterBuilder;
+
+pub use crate::types::_time_filter::TimeFilterBuilder;
+
+pub use crate::types::_address_identifier_filter::AddressIdentifierFilterBuilder;
+
 pub use crate::types::_asset_contract::AssetContractBuilder;
 
 pub use crate::types::_contract_identifier::ContractIdentifierBuilder;

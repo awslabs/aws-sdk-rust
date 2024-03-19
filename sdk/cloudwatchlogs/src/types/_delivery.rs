@@ -15,7 +15,7 @@ pub struct Delivery {
     pub delivery_source_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the delivery destination that is associated with this delivery.</p>
     pub delivery_destination_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Displays whether the delivery destination associated with this delivery is CloudWatch Logs, Amazon S3, or Kinesis Data Firehose.</p>
+    /// <p>Displays whether the delivery destination associated with this delivery is CloudWatch Logs, Amazon S3, or Firehose.</p>
     pub delivery_destination_type: ::std::option::Option<crate::types::DeliveryDestinationType>,
     /// <p>The tags that have been assigned to this delivery.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -37,7 +37,7 @@ impl Delivery {
     pub fn delivery_destination_arn(&self) -> ::std::option::Option<&str> {
         self.delivery_destination_arn.as_deref()
     }
-    /// <p>Displays whether the delivery destination associated with this delivery is CloudWatch Logs, Amazon S3, or Kinesis Data Firehose.</p>
+    /// <p>Displays whether the delivery destination associated with this delivery is CloudWatch Logs, Amazon S3, or Firehose.</p>
     pub fn delivery_destination_type(&self) -> ::std::option::Option<&crate::types::DeliveryDestinationType> {
         self.delivery_destination_type.as_ref()
     }
@@ -121,17 +121,17 @@ impl DeliveryBuilder {
     pub fn get_delivery_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.delivery_destination_arn
     }
-    /// <p>Displays whether the delivery destination associated with this delivery is CloudWatch Logs, Amazon S3, or Kinesis Data Firehose.</p>
+    /// <p>Displays whether the delivery destination associated with this delivery is CloudWatch Logs, Amazon S3, or Firehose.</p>
     pub fn delivery_destination_type(mut self, input: crate::types::DeliveryDestinationType) -> Self {
         self.delivery_destination_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Displays whether the delivery destination associated with this delivery is CloudWatch Logs, Amazon S3, or Kinesis Data Firehose.</p>
+    /// <p>Displays whether the delivery destination associated with this delivery is CloudWatch Logs, Amazon S3, or Firehose.</p>
     pub fn set_delivery_destination_type(mut self, input: ::std::option::Option<crate::types::DeliveryDestinationType>) -> Self {
         self.delivery_destination_type = input;
         self
     }
-    /// <p>Displays whether the delivery destination associated with this delivery is CloudWatch Logs, Amazon S3, or Kinesis Data Firehose.</p>
+    /// <p>Displays whether the delivery destination associated with this delivery is CloudWatch Logs, Amazon S3, or Firehose.</p>
     pub fn get_delivery_destination_type(&self) -> &::std::option::Option<crate::types::DeliveryDestinationType> {
         &self.delivery_destination_type
     }

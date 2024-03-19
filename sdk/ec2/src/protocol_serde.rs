@@ -1191,6 +1191,10 @@ pub(crate) mod shape_describe_locked_snapshots;
 
 pub(crate) mod shape_describe_locked_snapshots_input;
 
+pub(crate) mod shape_describe_mac_hosts;
+
+pub(crate) mod shape_describe_mac_hosts_input;
+
 pub(crate) mod shape_describe_managed_prefix_lists;
 
 pub(crate) mod shape_describe_managed_prefix_lists_input;
@@ -3155,6 +3159,8 @@ pub(crate) mod shape_local_gateway_virtual_interface_set;
 
 pub(crate) mod shape_locked_snapshots_info_list;
 
+pub(crate) mod shape_mac_host_list;
+
 pub(crate) mod shape_maintenance_details;
 
 pub(crate) mod shape_managed_prefix_list;
@@ -3835,6 +3841,8 @@ pub(crate) mod shape_local_gateway_virtual_interface_group;
 
 pub(crate) mod shape_locked_snapshots_info;
 
+pub(crate) mod shape_mac_host;
+
 pub(crate) mod shape_moving_address_status;
 
 pub(crate) mod shape_nat_gateway_address;
@@ -4262,6 +4270,8 @@ pub(crate) mod shape_load_permission;
 pub(crate) mod shape_local_gateway_virtual_interface_id_set;
 
 pub(crate) mod shape_local_storage_type_set;
+
+pub(crate) mod shape_mac_os_version_string_list;
 
 pub(crate) mod shape_media_accelerator_info;
 

@@ -1063,6 +1063,8 @@ pub use crate::types::_provisioned_bandwidth::ProvisionedBandwidthBuilder;
 
 pub use crate::types::_moving_address_status::MovingAddressStatusBuilder;
 
+pub use crate::types::_mac_host::MacHostBuilder;
+
 pub use crate::types::_locked_snapshots_info::LockedSnapshotsInfoBuilder;
 
 pub use crate::types::_local_gateway_virtual_interface::LocalGatewayVirtualInterfaceBuilder;

@@ -1571,6 +1571,8 @@ pub use crate::types::_moving_address_status::MovingAddressStatus;
 
 pub use crate::types::_move_status::MoveStatus;
 
+pub use crate::types::_mac_host::MacHost;
+
 pub use crate::types::_locked_snapshots_info::LockedSnapshotsInfo;
 
 pub use crate::types::_local_gateway_virtual_interface::LocalGatewayVirtualInterface;
@@ -3308,6 +3310,8 @@ mod _lock_state;
 mod _locked_snapshots_info;
 
 mod _log_destination_type;
+
+mod _mac_host;
 
 mod _maintenance_details;
 

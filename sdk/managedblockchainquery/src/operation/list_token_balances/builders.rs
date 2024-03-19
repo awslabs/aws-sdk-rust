@@ -173,7 +173,7 @@ impl ListTokenBalancesFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>The maximum number of token balances to return.</p>
-    /// <p>Default:<code>100</code></p><note>
+    /// <p>Default: <code>100</code></p><note>
     /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
     /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
     /// </note>
@@ -182,7 +182,7 @@ impl ListTokenBalancesFluentBuilder {
         self
     }
     /// <p>The maximum number of token balances to return.</p>
-    /// <p>Default:<code>100</code></p><note>
+    /// <p>Default: <code>100</code></p><note>
     /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
     /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
     /// </note>
@@ -191,7 +191,7 @@ impl ListTokenBalancesFluentBuilder {
         self
     }
     /// <p>The maximum number of token balances to return.</p>
-    /// <p>Default:<code>100</code></p><note>
+    /// <p>Default: <code>100</code></p><note>
     /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
     /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
     /// </note>

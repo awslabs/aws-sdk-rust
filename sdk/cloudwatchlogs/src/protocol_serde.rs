@@ -487,6 +487,8 @@ pub(crate) mod shape_pattern_tokens;
 
 pub(crate) mod shape_result_field;
 
+pub(crate) mod shape_log_event;
+
 pub(crate) mod shape_pattern_token;
 
 pub(crate) mod shape_dimensions;

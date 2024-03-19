@@ -8,7 +8,7 @@ pub struct BatchGetTokenBalanceInputItem {
     /// <p>Only the native tokens BTC and ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
     /// </note>
     pub token_identifier: ::std::option::Option<crate::types::TokenIdentifier>,
-    /// <p>The container for the identifier of the owner.</p>
+    /// <p>The container for the owner identifier.</p>
     pub owner_identifier: ::std::option::Option<crate::types::OwnerIdentifier>,
     /// <p>The container for time.</p>
     pub at_blockchain_instant: ::std::option::Option<crate::types::BlockchainInstant>,
@@ -20,7 +20,7 @@ impl BatchGetTokenBalanceInputItem {
     pub fn token_identifier(&self) -> ::std::option::Option<&crate::types::TokenIdentifier> {
         self.token_identifier.as_ref()
     }
-    /// <p>The container for the identifier of the owner.</p>
+    /// <p>The container for the owner identifier.</p>
     pub fn owner_identifier(&self) -> ::std::option::Option<&crate::types::OwnerIdentifier> {
         self.owner_identifier.as_ref()
     }
@@ -66,18 +66,18 @@ impl BatchGetTokenBalanceInputItemBuilder {
     pub fn get_token_identifier(&self) -> &::std::option::Option<crate::types::TokenIdentifier> {
         &self.token_identifier
     }
-    /// <p>The container for the identifier of the owner.</p>
+    /// <p>The container for the owner identifier.</p>
     /// This field is required.
     pub fn owner_identifier(mut self, input: crate::types::OwnerIdentifier) -> Self {
         self.owner_identifier = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The container for the identifier of the owner.</p>
+    /// <p>The container for the owner identifier.</p>
     pub fn set_owner_identifier(mut self, input: ::std::option::Option<crate::types::OwnerIdentifier>) -> Self {
         self.owner_identifier = input;
         self
     }
-    /// <p>The container for the identifier of the owner.</p>
+    /// <p>The container for the owner identifier.</p>
     pub fn get_owner_identifier(&self) -> &::std::option::Option<crate::types::OwnerIdentifier> {
         &self.owner_identifier
     }

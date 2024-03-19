@@ -33,17 +33,17 @@ impl PutAccountPolicyInputBuilder {
 /// <p>To use the <code>PutAccountPolicy</code> operation for a data protection policy, you must be signed on with the <code>logs:PutDataProtectionPolicy</code> and <code>logs:PutAccountPolicy</code> permissions.</p>
 /// <p>The <code>PutAccountPolicy</code> operation applies to all log groups in the account. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a> to create a data protection policy that applies to just one log group. If a log group has its own data protection policy and the account also has an account-level data protection policy, then the two policies are cumulative. Any sensitive term specified in either policy is masked.</p>
 /// <p><b>Subscription filter policy</b></p>
-/// <p>A subscription filter policy sets up a real-time feed of log events from CloudWatch Logs to other Amazon Web Services services. Account-level subscription filter policies apply to both existing log groups and log groups that are created later in this account. Supported destinations are Kinesis Data Streams, Kinesis Data Firehose, and Lambda. When log events are sent to the receiving service, they are Base64 encoded and compressed with the GZIP format.</p>
+/// <p>A subscription filter policy sets up a real-time feed of log events from CloudWatch Logs to other Amazon Web Services services. Account-level subscription filter policies apply to both existing log groups and log groups that are created later in this account. Supported destinations are Kinesis Data Streams, Firehose, and Lambda. When log events are sent to the receiving service, they are Base64 encoded and compressed with the GZIP format.</p>
 /// <p>The following destinations are supported for subscription filters:</p>
 /// <ul>
 /// <li>
 /// <p>An Kinesis Data Streams data stream in the same account as the subscription policy, for same-account delivery.</p></li>
 /// <li>
-/// <p>An Kinesis Data Firehose data stream in the same account as the subscription policy, for same-account delivery.</p></li>
+/// <p>An Firehose data stream in the same account as the subscription policy, for same-account delivery.</p></li>
 /// <li>
 /// <p>A Lambda function in the same account as the subscription policy, for same-account delivery.</p></li>
 /// <li>
-/// <p>A logical destination in a different account created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are supported as logical destinations.</p></li>
+/// <p>A logical destination in a different account created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Firehose are supported as logical destinations.</p></li>
 /// </ul>
 /// <p>Each account can have one account-level subscription filter policy. If you are updating an existing filter, you must specify the correct name in <code>PolicyName</code>. To perform a <code>PutAccountPolicy</code> subscription filter operation for any destination except a Lambda function, you must also have the <code>iam:PassRole</code> permission.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -151,7 +151,7 @@ impl PutAccountPolicyFluentBuilder {
     /// <ul>
     /// <li>
     /// <p>The first block must include both a <code>DataIdentifer</code> array and an <code>Operation</code> property with an <code>Audit</code> action. The <code>DataIdentifer</code> array lists the types of sensitive data that you want to mask. For more information about the available options, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data-types.html">Types of data that you can mask</a>.</p>
-    /// <p>The <code>Operation</code> property with an <code>Audit</code> action is required to find the sensitive data terms. This <code>Audit</code> action must contain a <code>FindingsDestination</code> object. You can optionally use that <code>FindingsDestination</code> object to list one or more destinations to send audit findings to. If you specify destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets, they must already exist.</p></li>
+    /// <p>The <code>Operation</code> property with an <code>Audit</code> action is required to find the sensitive data terms. This <code>Audit</code> action must contain a <code>FindingsDestination</code> object. You can optionally use that <code>FindingsDestination</code> object to list one or more destinations to send audit findings to. If you specify destinations such as log groups, Firehose streams, and S3 buckets, they must already exist.</p></li>
     /// <li>
     /// <p>The second block must include both a <code>DataIdentifer</code> array and an <code>Operation</code> property with an <code>Deidentify</code> action. The <code>DataIdentifer</code> array must exactly match the <code>DataIdentifer</code> array in the first block of the policy.</p>
     /// <p>The <code>Operation</code> property with the <code>Deidentify</code> action is what actually masks the data, and it must contain the <code> "MaskConfig": {}</code> object. The <code> "MaskConfig": {}</code> object must be empty.</p></li>
@@ -170,11 +170,11 @@ impl PutAccountPolicyFluentBuilder {
     /// <li>
     /// <p>An Kinesis Data Streams data stream in the same account as the subscription policy, for same-account delivery.</p></li>
     /// <li>
-    /// <p>An Kinesis Data Firehose data stream in the same account as the subscription policy, for same-account delivery.</p></li>
+    /// <p>An Firehose data stream in the same account as the subscription policy, for same-account delivery.</p></li>
     /// <li>
     /// <p>A Lambda function in the same account as the subscription policy, for same-account delivery.</p></li>
     /// <li>
-    /// <p>A logical destination in a different account created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are supported as logical destinations.</p></li>
+    /// <p>A logical destination in a different account created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Firehose are supported as logical destinations.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><b>RoleArn</b> The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the destination stream. You don't need to provide the ARN when you are working with a logical destination for cross-account delivery.</p></li>
@@ -193,7 +193,7 @@ impl PutAccountPolicyFluentBuilder {
     /// <ul>
     /// <li>
     /// <p>The first block must include both a <code>DataIdentifer</code> array and an <code>Operation</code> property with an <code>Audit</code> action. The <code>DataIdentifer</code> array lists the types of sensitive data that you want to mask. For more information about the available options, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data-types.html">Types of data that you can mask</a>.</p>
-    /// <p>The <code>Operation</code> property with an <code>Audit</code> action is required to find the sensitive data terms. This <code>Audit</code> action must contain a <code>FindingsDestination</code> object. You can optionally use that <code>FindingsDestination</code> object to list one or more destinations to send audit findings to. If you specify destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets, they must already exist.</p></li>
+    /// <p>The <code>Operation</code> property with an <code>Audit</code> action is required to find the sensitive data terms. This <code>Audit</code> action must contain a <code>FindingsDestination</code> object. You can optionally use that <code>FindingsDestination</code> object to list one or more destinations to send audit findings to. If you specify destinations such as log groups, Firehose streams, and S3 buckets, they must already exist.</p></li>
     /// <li>
     /// <p>The second block must include both a <code>DataIdentifer</code> array and an <code>Operation</code> property with an <code>Deidentify</code> action. The <code>DataIdentifer</code> array must exactly match the <code>DataIdentifer</code> array in the first block of the policy.</p>
     /// <p>The <code>Operation</code> property with the <code>Deidentify</code> action is what actually masks the data, and it must contain the <code> "MaskConfig": {}</code> object. The <code> "MaskConfig": {}</code> object must be empty.</p></li>
@@ -212,11 +212,11 @@ impl PutAccountPolicyFluentBuilder {
     /// <li>
     /// <p>An Kinesis Data Streams data stream in the same account as the subscription policy, for same-account delivery.</p></li>
     /// <li>
-    /// <p>An Kinesis Data Firehose data stream in the same account as the subscription policy, for same-account delivery.</p></li>
+    /// <p>An Firehose data stream in the same account as the subscription policy, for same-account delivery.</p></li>
     /// <li>
     /// <p>A Lambda function in the same account as the subscription policy, for same-account delivery.</p></li>
     /// <li>
-    /// <p>A logical destination in a different account created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are supported as logical destinations.</p></li>
+    /// <p>A logical destination in a different account created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Firehose are supported as logical destinations.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><b>RoleArn</b> The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the destination stream. You don't need to provide the ARN when you are working with a logical destination for cross-account delivery.</p></li>
@@ -235,7 +235,7 @@ impl PutAccountPolicyFluentBuilder {
     /// <ul>
     /// <li>
     /// <p>The first block must include both a <code>DataIdentifer</code> array and an <code>Operation</code> property with an <code>Audit</code> action. The <code>DataIdentifer</code> array lists the types of sensitive data that you want to mask. For more information about the available options, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data-types.html">Types of data that you can mask</a>.</p>
-    /// <p>The <code>Operation</code> property with an <code>Audit</code> action is required to find the sensitive data terms. This <code>Audit</code> action must contain a <code>FindingsDestination</code> object. You can optionally use that <code>FindingsDestination</code> object to list one or more destinations to send audit findings to. If you specify destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets, they must already exist.</p></li>
+    /// <p>The <code>Operation</code> property with an <code>Audit</code> action is required to find the sensitive data terms. This <code>Audit</code> action must contain a <code>FindingsDestination</code> object. You can optionally use that <code>FindingsDestination</code> object to list one or more destinations to send audit findings to. If you specify destinations such as log groups, Firehose streams, and S3 buckets, they must already exist.</p></li>
     /// <li>
     /// <p>The second block must include both a <code>DataIdentifer</code> array and an <code>Operation</code> property with an <code>Deidentify</code> action. The <code>DataIdentifer</code> array must exactly match the <code>DataIdentifer</code> array in the first block of the policy.</p>
     /// <p>The <code>Operation</code> property with the <code>Deidentify</code> action is what actually masks the data, and it must contain the <code> "MaskConfig": {}</code> object. The <code> "MaskConfig": {}</code> object must be empty.</p></li>
@@ -254,11 +254,11 @@ impl PutAccountPolicyFluentBuilder {
     /// <li>
     /// <p>An Kinesis Data Streams data stream in the same account as the subscription policy, for same-account delivery.</p></li>
     /// <li>
-    /// <p>An Kinesis Data Firehose data stream in the same account as the subscription policy, for same-account delivery.</p></li>
+    /// <p>An Firehose data stream in the same account as the subscription policy, for same-account delivery.</p></li>
     /// <li>
     /// <p>A Lambda function in the same account as the subscription policy, for same-account delivery.</p></li>
     /// <li>
-    /// <p>A logical destination in a different account created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are supported as logical destinations.</p></li>
+    /// <p>A logical destination in a different account created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Firehose are supported as logical destinations.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><b>RoleArn</b> The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the destination stream. You don't need to provide the ARN when you are working with a logical destination for cross-account delivery.</p></li>

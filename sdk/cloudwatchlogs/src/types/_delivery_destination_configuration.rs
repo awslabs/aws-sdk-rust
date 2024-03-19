@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeliveryDestinationConfiguration {
-    /// <p>The ARN of the Amazon Web Services destination that this delivery destination represents. That Amazon Web Services destination can be a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Kinesis Data Firehose.</p>
+    /// <p>The ARN of the Amazon Web Services destination that this delivery destination represents. That Amazon Web Services destination can be a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Firehose.</p>
     pub destination_resource_arn: ::std::string::String,
 }
 impl DeliveryDestinationConfiguration {
-    /// <p>The ARN of the Amazon Web Services destination that this delivery destination represents. That Amazon Web Services destination can be a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Kinesis Data Firehose.</p>
+    /// <p>The ARN of the Amazon Web Services destination that this delivery destination represents. That Amazon Web Services destination can be a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Firehose.</p>
     pub fn destination_resource_arn(&self) -> &str {
         use std::ops::Deref;
         self.destination_resource_arn.deref()
@@ -28,18 +28,18 @@ pub struct DeliveryDestinationConfigurationBuilder {
     pub(crate) destination_resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeliveryDestinationConfigurationBuilder {
-    /// <p>The ARN of the Amazon Web Services destination that this delivery destination represents. That Amazon Web Services destination can be a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Kinesis Data Firehose.</p>
+    /// <p>The ARN of the Amazon Web Services destination that this delivery destination represents. That Amazon Web Services destination can be a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Firehose.</p>
     /// This field is required.
     pub fn destination_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the Amazon Web Services destination that this delivery destination represents. That Amazon Web Services destination can be a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Kinesis Data Firehose.</p>
+    /// <p>The ARN of the Amazon Web Services destination that this delivery destination represents. That Amazon Web Services destination can be a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Firehose.</p>
     pub fn set_destination_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_resource_arn = input;
         self
     }
-    /// <p>The ARN of the Amazon Web Services destination that this delivery destination represents. That Amazon Web Services destination can be a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Kinesis Data Firehose.</p>
+    /// <p>The ARN of the Amazon Web Services destination that this delivery destination represents. That Amazon Web Services destination can be a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Firehose.</p>
     pub fn get_destination_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_resource_arn
     }

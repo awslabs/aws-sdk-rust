@@ -7,7 +7,15 @@ pub struct PutDeliverySourceInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Amazon Web Services resource that is generating and sending logs. For example, <code>arn:aws:workmail:us-east-1:123456789012:organization/m-1234EXAMPLEabcd1234abcd1234abcd1234</code></p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Defines the type of log that the source is sending. For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p>
+    /// <p>Defines the type of log that the source is sending.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For IAM Identity Centerr, the valid value is <code>ERROR_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.</p></li>
+    /// </ul>
     pub log_type: ::std::option::Option<::std::string::String>,
     /// <p>An optional list of key-value pairs to associate with the resource.</p>
     /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a></p>
@@ -22,7 +30,15 @@ impl PutDeliverySourceInput {
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>Defines the type of log that the source is sending. For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p>
+    /// <p>Defines the type of log that the source is sending.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For IAM Identity Centerr, the valid value is <code>ERROR_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.</p></li>
+    /// </ul>
     pub fn log_type(&self) -> ::std::option::Option<&str> {
         self.log_type.as_deref()
     }
@@ -79,18 +95,42 @@ impl PutDeliverySourceInputBuilder {
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
-    /// <p>Defines the type of log that the source is sending. For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p>
+    /// <p>Defines the type of log that the source is sending.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For IAM Identity Centerr, the valid value is <code>ERROR_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn log_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Defines the type of log that the source is sending. For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p>
+    /// <p>Defines the type of log that the source is sending.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For IAM Identity Centerr, the valid value is <code>ERROR_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.</p></li>
+    /// </ul>
     pub fn set_log_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_type = input;
         self
     }
-    /// <p>Defines the type of log that the source is sending. For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p>
+    /// <p>Defines the type of log that the source is sending.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For IAM Identity Centerr, the valid value is <code>ERROR_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.</p></li>
+    /// </ul>
     pub fn get_log_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_type
     }

@@ -146,6 +146,15 @@ pub(crate) fn list_asset_contracts_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_filtered_transaction_events_output_output_correct_errors(
+    mut builder: crate::operation::list_filtered_transaction_events::builders::ListFilteredTransactionEventsOutputBuilder,
+) -> crate::operation::list_filtered_transaction_events::builders::ListFilteredTransactionEventsOutputBuilder {
+    if builder.events.is_none() {
+        builder.events = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_token_balances_output_output_correct_errors(
     mut builder: crate::operation::list_token_balances::builders::ListTokenBalancesOutputBuilder,
 ) -> crate::operation::list_token_balances::builders::ListTokenBalancesOutputBuilder {

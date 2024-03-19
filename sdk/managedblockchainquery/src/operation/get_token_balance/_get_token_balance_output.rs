@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTokenBalanceOutput {
-    /// <p>The container for the identifier of the owner.</p>
+    /// <p>The container for the owner identifier.</p>
     pub owner_identifier: ::std::option::Option<crate::types::OwnerIdentifier>,
     /// <p>The container for the identifier for the token including the unique token ID and its blockchain network.</p><note>
     /// <p>Only the native tokens BTC and ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
@@ -18,7 +18,7 @@ pub struct GetTokenBalanceOutput {
     _request_id: Option<String>,
 }
 impl GetTokenBalanceOutput {
-    /// <p>The container for the identifier of the owner.</p>
+    /// <p>The container for the owner identifier.</p>
     pub fn owner_identifier(&self) -> ::std::option::Option<&crate::types::OwnerIdentifier> {
         self.owner_identifier.as_ref()
     }
@@ -66,17 +66,17 @@ pub struct GetTokenBalanceOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetTokenBalanceOutputBuilder {
-    /// <p>The container for the identifier of the owner.</p>
+    /// <p>The container for the owner identifier.</p>
     pub fn owner_identifier(mut self, input: crate::types::OwnerIdentifier) -> Self {
         self.owner_identifier = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The container for the identifier of the owner.</p>
+    /// <p>The container for the owner identifier.</p>
     pub fn set_owner_identifier(mut self, input: ::std::option::Option<crate::types::OwnerIdentifier>) -> Self {
         self.owner_identifier = input;
         self
     }
-    /// <p>The container for the identifier of the owner.</p>
+    /// <p>The container for the owner identifier.</p>
     pub fn get_owner_identifier(&self) -> &::std::option::Option<crate::types::OwnerIdentifier> {
         &self.owner_identifier
     }

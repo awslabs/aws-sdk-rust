@@ -150,35 +150,17 @@ impl CreateKxDataviewFluentBuilder {
     pub fn get_dataview_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dataview_name()
     }
-    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
-    /// <li>
-    /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
-    /// </ul>
+    /// <p>The number of availability zones you want to assign per volume. Currently, FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in a single AZ.</p>
     pub fn az_mode(mut self, input: crate::types::KxAzMode) -> Self {
         self.inner = self.inner.az_mode(input);
         self
     }
-    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
-    /// <li>
-    /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
-    /// </ul>
+    /// <p>The number of availability zones you want to assign per volume. Currently, FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in a single AZ.</p>
     pub fn set_az_mode(mut self, input: ::std::option::Option<crate::types::KxAzMode>) -> Self {
         self.inner = self.inner.set_az_mode(input);
         self
     }
-    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
-    /// <li>
-    /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
-    /// </ul>
+    /// <p>The number of availability zones you want to assign per volume. Currently, FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in a single AZ.</p>
     pub fn get_az_mode(&self) -> &::std::option::Option<crate::types::KxAzMode> {
         self.inner.get_az_mode()
     }
@@ -241,6 +223,50 @@ impl CreateKxDataviewFluentBuilder {
     /// <p>The option to specify whether you want to apply all the future additions and corrections automatically to the dataview, when you ingest new changesets. The default value is false.</p>
     pub fn get_auto_update(&self) -> &::std::option::Option<bool> {
         self.inner.get_auto_update()
+    }
+    /// <p>The option to specify whether you want to make the dataview writable to perform database maintenance. The following are some considerations related to writable dataviews.  </p>
+    /// <ul>
+    /// <li>
+    /// <p>You cannot create partial writable dataviews. When you create writeable dataviews you must provide the entire database path.</p></li>
+    /// <li>
+    /// <p>You cannot perform updates on a writeable dataview. Hence, <code>autoUpdate</code> must be set as <b>False</b> if <code>readWrite</code> is <b>True</b> for a dataview.</p></li>
+    /// <li>
+    /// <p>You must also use a unique volume for creating a writeable dataview. So, if you choose a volume that is already in use by another dataview, the dataview creation fails.</p></li>
+    /// <li>
+    /// <p>Once you create a dataview as writeable, you cannot change it to read-only. So, you cannot update the <code>readWrite</code> parameter later.</p></li>
+    /// </ul>
+    pub fn read_write(mut self, input: bool) -> Self {
+        self.inner = self.inner.read_write(input);
+        self
+    }
+    /// <p>The option to specify whether you want to make the dataview writable to perform database maintenance. The following are some considerations related to writable dataviews.  </p>
+    /// <ul>
+    /// <li>
+    /// <p>You cannot create partial writable dataviews. When you create writeable dataviews you must provide the entire database path.</p></li>
+    /// <li>
+    /// <p>You cannot perform updates on a writeable dataview. Hence, <code>autoUpdate</code> must be set as <b>False</b> if <code>readWrite</code> is <b>True</b> for a dataview.</p></li>
+    /// <li>
+    /// <p>You must also use a unique volume for creating a writeable dataview. So, if you choose a volume that is already in use by another dataview, the dataview creation fails.</p></li>
+    /// <li>
+    /// <p>Once you create a dataview as writeable, you cannot change it to read-only. So, you cannot update the <code>readWrite</code> parameter later.</p></li>
+    /// </ul>
+    pub fn set_read_write(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_read_write(input);
+        self
+    }
+    /// <p>The option to specify whether you want to make the dataview writable to perform database maintenance. The following are some considerations related to writable dataviews.  </p>
+    /// <ul>
+    /// <li>
+    /// <p>You cannot create partial writable dataviews. When you create writeable dataviews you must provide the entire database path.</p></li>
+    /// <li>
+    /// <p>You cannot perform updates on a writeable dataview. Hence, <code>autoUpdate</code> must be set as <b>False</b> if <code>readWrite</code> is <b>True</b> for a dataview.</p></li>
+    /// <li>
+    /// <p>You must also use a unique volume for creating a writeable dataview. So, if you choose a volume that is already in use by another dataview, the dataview creation fails.</p></li>
+    /// <li>
+    /// <p>Once you create a dataview as writeable, you cannot change it to read-only. So, you cannot update the <code>readWrite</code> parameter later.</p></li>
+    /// </ul>
+    pub fn get_read_write(&self) -> &::std::option::Option<bool> {
+        self.inner.get_read_write()
     }
     /// <p>A description of the dataview.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

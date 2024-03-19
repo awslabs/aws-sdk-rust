@@ -22,7 +22,7 @@ impl PutDeliverySourceInputBuilder {
 }
 /// Fluent builder constructing a request to `PutDeliverySource`.
 ///
-/// <p>Creates or updates a logical <i>delivery source</i>. A delivery source represents an Amazon Web Services resource that sends logs to an logs delivery destination. The destination can be CloudWatch Logs, Amazon S3, or Kinesis Data Firehose.</p>
+/// <p>Creates or updates a logical <i>delivery source</i>. A delivery source represents an Amazon Web Services resource that sends logs to an logs delivery destination. The destination can be CloudWatch Logs, Amazon S3, or Firehose.</p>
 /// <p>To configure logs delivery between a delivery destination and an Amazon Web Services service that is supported as a delivery source, you must do the following:</p>
 /// <ul>
 /// <li>
@@ -150,17 +150,41 @@ impl PutDeliverySourceFluentBuilder {
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }
-    /// <p>Defines the type of log that the source is sending. For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p>
+    /// <p>Defines the type of log that the source is sending.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For IAM Identity Centerr, the valid value is <code>ERROR_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.</p></li>
+    /// </ul>
     pub fn log_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_type(input.into());
         self
     }
-    /// <p>Defines the type of log that the source is sending. For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p>
+    /// <p>Defines the type of log that the source is sending.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For IAM Identity Centerr, the valid value is <code>ERROR_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.</p></li>
+    /// </ul>
     pub fn set_log_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_type(input);
         self
     }
-    /// <p>Defines the type of log that the source is sending. For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p>
+    /// <p>Defines the type of log that the source is sending.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For IAM Identity Centerr, the valid value is <code>ERROR_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.</p></li>
+    /// </ul>
     pub fn get_log_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_log_type()
     }

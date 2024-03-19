@@ -6,12 +6,12 @@
 pub struct InternalServerException {
     /// <p>The container for the exception message.</p>
     pub message: ::std::string::String,
-    /// <p>The container of the <code>retryAfterSeconds</code> value.</p>
+    /// <p>Specifies the <code>retryAfterSeconds</code> value.</p>
     pub retry_after_seconds: ::std::option::Option<i32>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl InternalServerException {
-    /// <p>The container of the <code>retryAfterSeconds</code> value.</p>
+    /// <p>Specifies the <code>retryAfterSeconds</code> value.</p>
     pub fn retry_after_seconds(&self) -> ::std::option::Option<i32> {
         self.retry_after_seconds
     }
@@ -78,17 +78,17 @@ impl InternalServerExceptionBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
-    /// <p>The container of the <code>retryAfterSeconds</code> value.</p>
+    /// <p>Specifies the <code>retryAfterSeconds</code> value.</p>
     pub fn retry_after_seconds(mut self, input: i32) -> Self {
         self.retry_after_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The container of the <code>retryAfterSeconds</code> value.</p>
+    /// <p>Specifies the <code>retryAfterSeconds</code> value.</p>
     pub fn set_retry_after_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retry_after_seconds = input;
         self
     }
-    /// <p>The container of the <code>retryAfterSeconds</code> value.</p>
+    /// <p>Specifies the <code>retryAfterSeconds</code> value.</p>
     pub fn get_retry_after_seconds(&self) -> &::std::option::Option<i32> {
         &self.retry_after_seconds
     }

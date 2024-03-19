@@ -15,6 +15,9 @@ pub fn ser_kx_dataview_segment_configuration(
     {
         object.key("volumeName").string(input.volume_name.as_str());
     }
+    if input.on_demand {
+        object.key("onDemand").boolean(input.on_demand);
+    }
     Ok(())
 }
 
@@ -44,6 +47,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "onDemand" => {
+                            builder = builder.set_on_demand(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

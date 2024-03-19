@@ -24,27 +24,30 @@ pub fn ser_create_kx_dataview_input_input(
     if let Some(var_7) = &input.description {
         object.key("description").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.segment_configurations {
-        let mut array_9 = object.key("segmentConfigurations").start_array();
-        for item_10 in var_8 {
+    if let Some(var_8) = &input.read_write {
+        object.key("readWrite").boolean(*var_8);
+    }
+    if let Some(var_9) = &input.segment_configurations {
+        let mut array_10 = object.key("segmentConfigurations").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_kx_dataview_segment_configuration::ser_kx_dataview_segment_configuration(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_kx_dataview_segment_configuration::ser_kx_dataview_segment_configuration(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
-    if let Some(var_12) = &input.tags {
+    if let Some(var_13) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("tags").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_14 = object.key("tags").start_object();
+        for (key_15, value_16) in var_13 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                object_14.key(key_15.as_str()).string(value_16.as_str());
             }
         }
-        object_13.finish();
+        object_14.finish();
     }
     Ok(())
 }

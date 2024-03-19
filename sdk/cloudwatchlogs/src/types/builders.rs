@@ -33,6 +33,8 @@ pub use crate::types::_anomaly::AnomalyBuilder;
 
 pub use crate::types::_pattern_token::PatternTokenBuilder;
 
+pub use crate::types::_log_event::LogEventBuilder;
+
 pub use crate::types::_query_statistics::QueryStatisticsBuilder;
 
 pub use crate::types::_result_field::ResultFieldBuilder;

@@ -877,6 +877,9 @@ pub mod describe_local_gateways;
 /// Types for the `DescribeLockedSnapshots` operation.
 pub mod describe_locked_snapshots;
 
+/// Types for the `DescribeMacHosts` operation.
+pub mod describe_mac_hosts;
+
 /// Types for the `DescribeManagedPrefixLists` operation.
 pub mod describe_managed_prefix_lists;
 

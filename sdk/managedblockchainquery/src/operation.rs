@@ -16,6 +16,9 @@ pub mod get_transaction;
 /// Types for the `ListAssetContracts` operation.
 pub mod list_asset_contracts;
 
+/// Types for the `ListFilteredTransactionEvents` operation.
+pub mod list_filtered_transaction_events;
+
 /// Types for the `ListTokenBalances` operation.
 pub mod list_token_balances;
 

@@ -11,7 +11,7 @@ pub struct TemplateConfiguration {
     /// <li>
     /// <p><code>RETAIN</code> - retain all resources when the stack is deleted.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html"> <code>DeletionPolicy</code> attribute</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">DeletionPolicy attribute</a> in the <i>CloudFormation User Guide</i>.</p>
     pub deletion_policy: ::std::option::Option<crate::types::GeneratedTemplateDeletionPolicy>,
     /// <p>The <code>UpdateReplacePolicy</code> assigned to resources in the generated template. Supported values are:</p>
     /// <ul>
@@ -20,7 +20,7 @@ pub struct TemplateConfiguration {
     /// <li>
     /// <p><code>RETAIN</code> - retain all resources when the resource is replaced during an update operation.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html"> <code>UpdateReplacePolicy</code> attribute</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">UpdateReplacePolicy attribute</a> in the <i>CloudFormation User Guide</i>.</p>
     pub update_replace_policy: ::std::option::Option<crate::types::GeneratedTemplateUpdateReplacePolicy>,
 }
 impl TemplateConfiguration {
@@ -31,7 +31,7 @@ impl TemplateConfiguration {
     /// <li>
     /// <p><code>RETAIN</code> - retain all resources when the stack is deleted.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html"> <code>DeletionPolicy</code> attribute</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">DeletionPolicy attribute</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn deletion_policy(&self) -> ::std::option::Option<&crate::types::GeneratedTemplateDeletionPolicy> {
         self.deletion_policy.as_ref()
     }
@@ -42,7 +42,7 @@ impl TemplateConfiguration {
     /// <li>
     /// <p><code>RETAIN</code> - retain all resources when the resource is replaced during an update operation.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html"> <code>UpdateReplacePolicy</code> attribute</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">UpdateReplacePolicy attribute</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn update_replace_policy(&self) -> ::std::option::Option<&crate::types::GeneratedTemplateUpdateReplacePolicy> {
         self.update_replace_policy.as_ref()
     }
@@ -69,7 +69,7 @@ impl TemplateConfigurationBuilder {
     /// <li>
     /// <p><code>RETAIN</code> - retain all resources when the stack is deleted.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html"> <code>DeletionPolicy</code> attribute</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">DeletionPolicy attribute</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn deletion_policy(mut self, input: crate::types::GeneratedTemplateDeletionPolicy) -> Self {
         self.deletion_policy = ::std::option::Option::Some(input);
         self
@@ -81,7 +81,7 @@ impl TemplateConfigurationBuilder {
     /// <li>
     /// <p><code>RETAIN</code> - retain all resources when the stack is deleted.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html"> <code>DeletionPolicy</code> attribute</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">DeletionPolicy attribute</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_deletion_policy(mut self, input: ::std::option::Option<crate::types::GeneratedTemplateDeletionPolicy>) -> Self {
         self.deletion_policy = input;
         self
@@ -93,7 +93,7 @@ impl TemplateConfigurationBuilder {
     /// <li>
     /// <p><code>RETAIN</code> - retain all resources when the stack is deleted.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html"> <code>DeletionPolicy</code> attribute</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">DeletionPolicy attribute</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn get_deletion_policy(&self) -> &::std::option::Option<crate::types::GeneratedTemplateDeletionPolicy> {
         &self.deletion_policy
     }
@@ -104,7 +104,7 @@ impl TemplateConfigurationBuilder {
     /// <li>
     /// <p><code>RETAIN</code> - retain all resources when the resource is replaced during an update operation.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html"> <code>UpdateReplacePolicy</code> attribute</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">UpdateReplacePolicy attribute</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn update_replace_policy(mut self, input: crate::types::GeneratedTemplateUpdateReplacePolicy) -> Self {
         self.update_replace_policy = ::std::option::Option::Some(input);
         self
@@ -116,7 +116,7 @@ impl TemplateConfigurationBuilder {
     /// <li>
     /// <p><code>RETAIN</code> - retain all resources when the resource is replaced during an update operation.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html"> <code>UpdateReplacePolicy</code> attribute</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">UpdateReplacePolicy attribute</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_update_replace_policy(mut self, input: ::std::option::Option<crate::types::GeneratedTemplateUpdateReplacePolicy>) -> Self {
         self.update_replace_policy = input;
         self
@@ -128,7 +128,7 @@ impl TemplateConfigurationBuilder {
     /// <li>
     /// <p><code>RETAIN</code> - retain all resources when the resource is replaced during an update operation.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html"> <code>UpdateReplacePolicy</code> attribute</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">UpdateReplacePolicy attribute</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn get_update_replace_policy(&self) -> &::std::option::Option<crate::types::GeneratedTemplateUpdateReplacePolicy> {
         &self.update_replace_policy
     }

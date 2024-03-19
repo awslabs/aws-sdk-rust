@@ -192,6 +192,9 @@ pub(crate) fn de_get_kx_dataview(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "readWrite" => {
+                    builder = builder.set_read_write(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 "segmentConfigurations" => {
                     builder = builder.set_segment_configurations(
                         crate::protocol_serde::shape_kx_dataview_segment_configuration_list::de_kx_dataview_segment_configuration_list(tokens)?,
